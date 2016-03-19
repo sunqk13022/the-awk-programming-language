@@ -1,0 +1,12 @@
+BEGIN {# FS = "\t "
+        printf("%10s %5s %5s    %s\n\n", "country","area", "pop","cointinent")
+      }
+
+      {
+        printf("%10s  %5d %5d   %s\n", $1,$2, $3, $4)
+        area = area + $2
+        pop  = pop  + $3
+      }
+
+END   { printf("\n%10s  %5d  %5d\n", "total", area, pop)
+      }
